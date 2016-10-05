@@ -1,3 +1,4 @@
-/interfaces/
-/controller/
 /behaviours/
+/controller/
+/ducks/
+/interfaces/
