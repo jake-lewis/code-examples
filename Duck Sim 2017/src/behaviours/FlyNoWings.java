@@ -2,11 +2,17 @@ package behaviours;
 
 import interfaces.MovementBehaviour;
 
-public class FlyNoWings implements MovementBehaviour {
+/**
+ * @author jsjlewis96
+ */
+public class FlyNoWings implements MovementBehaviour
+{
 
-	@Override
-	public void move() {
+	/**
+	 * 
+	 */
+	public void move()
+	{
 		System.out.println("I can't fly :'(");
 	}
-
 }

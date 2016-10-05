@@ -1,6 +1,15 @@
 package interfaces;
 
-public interface MovementBehaviour {
+/**
+ * Interface for movement behaviour.
+ * 
+ * @author jsjlewis96
+ */
+public interface MovementBehaviour
+{
 
-	public void move();
+	/**
+	 * The movement method.
+	 */
+	void move();
 }
