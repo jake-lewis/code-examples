@@ -1,6 +1,5 @@
 package video.upload;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -10,7 +9,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Path;
 
 import javax.imageio.ImageIO;
 import javax.net.ssl.HttpsURLConnection;
@@ -27,18 +25,27 @@ public class VisionServiceClient {
 		this.apiKey = yourApiKey;
 	}
 	
-	public void analizeImage(final String imagePath, final toGet infoToGet)
+	public String analyzeImage(final String imagePath, final toGet infoToGet)
+	{
+		try {
+			return this.analyzeImage(ImageIO.read(new File(imagePath)), infoToGet);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public String analyzeImage(final BufferedImage image, final toGet infoToGet)
 	{
 		try
 		{
-			BufferedImage image = ImageIO.read(new File(imagePath));
 			URL url = new URL(infoToGet.getURL(this.apiKey));
 			final HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
 			connection.setRequestProperty("Content-Type", "application/octet-stream");
 			connection.setRequestProperty("Content-Length", String.valueOf(0));
 			connection.setDoOutput(true);
-			
 			
 			//Send request
 		    DataOutputStream wr = new DataOutputStream (
@@ -57,6 +64,7 @@ public class VisionServiceClient {
 		    }
 		    rd.close();
 		    System.out.println(response.toString());
+		    return response.toString();
 		}
 		catch (MalformedURLException e)
 		{
@@ -66,6 +74,7 @@ public class VisionServiceClient {
 		{
 			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	public enum toGet
