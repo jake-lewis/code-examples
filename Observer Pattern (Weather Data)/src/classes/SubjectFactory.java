@@ -4,32 +4,32 @@ import interfaces.Subject;
 
 public class SubjectFactory
 {
-	
-	public final Subject getSubject(Subjects subject)
+
+	public final Subject getSubject(SubjectType subject)
 	{
 		return subject.getInstance();
 	}
-	
-	public enum Subjects
+
+	public enum SubjectType
 	{
-		WEATHER_DATA{
+		WEATHER_DATA
+		{
 			@Override
 			public Subject getInstance()
 			{
-				// TODO Auto-generated method stub
 				return new WeatherData();
 			}
-		}, 
-		LOCATION_DATA{
+		},
+		LOCATION_DATA
+		{
 			@Override
 			public Subject getInstance()
 			{
-				// TODO Auto-generated method stub
-				
+				// TODO
+				return null;
 			}
-			
 		};
-		
+
 		public abstract Subject getInstance();
 	}
 }
