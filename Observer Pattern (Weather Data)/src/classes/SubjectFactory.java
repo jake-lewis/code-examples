@@ -25,7 +25,7 @@ public class SubjectFactory
 			public Subject getInstance()
 			{
 				// TODO Auto-generated method stub
-				
+				return null;
 			}
 			
 		};
