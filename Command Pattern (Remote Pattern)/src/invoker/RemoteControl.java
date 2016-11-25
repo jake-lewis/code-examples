@@ -14,12 +14,15 @@ public class RemoteControl
 {
 	private Map<Integer, Pair<Command, Command>> slots;
 	private Stack<Command> actions;
+	private Stack<Command> redoActions;
 	int nextEmptySlot = 1;
 	
 	public RemoteControl()
 	{
 		this.slots = new HashMap<>();
 		this.actions = new Stack<>();
+		//TODO REDO
+		this.redoActions = new Stack<>();
 	}
 	
 	public void assignFunction(Command offCommand, Command onCommand)

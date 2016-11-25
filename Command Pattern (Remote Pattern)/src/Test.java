@@ -29,6 +29,8 @@ public class Test
 		Command blindOpenCommand = new BlindOpenCommand(livingRoomBlind);
 		Command blindCloseCommand = new BlindCloseCommand(livingRoomBlind);
 		
+		System.out.println("--------Doing stuff-------");
+		
 		remote.assignFunction(closeDoorCommand, openDoorCommand);
 		remote.pressOnButton(1);
 		remote.pressOffButton(1);
@@ -42,6 +44,8 @@ public class Test
 		remote.pressOffButton(3);
 		
 		System.out.println();
+		
+		System.out.println("-------Undoing stuff-------");
 		
 //		remote.undo();
 //		remote.undo();
