@@ -1,13 +1,13 @@
 package commands;
 
 import interfaces.Command;
-import recievers.GarageDoor;
+import recievers.Door;
 
-public class GarageOpenDoorCommand implements Command
+public class DoorOpenCommand implements Command
 {
-	GarageDoor garageDoor;
+	Door garageDoor;
 	
-	public GarageOpenDoorCommand(GarageDoor garageDoor)
+	public DoorOpenCommand(Door garageDoor)
 	{
 		this.garageDoor = garageDoor;
 	}

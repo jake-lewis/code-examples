@@ -2,13 +2,20 @@ package recievers;
 
 public class Light
 {
+	private String location;
+	
+	public Light(String location)
+	{
+		this.location = location;
+	}
+	
 	public void lightOn()
 	{
-		System.out.println("Light is on.");
+		System.out.println("The " + this.location + " light is on.");
 	}
 	
 	public void lightOff()
 	{
-		System.out.println("Light is off.");
+		System.out.println("The " + this.location + " light is off.");
 	}
 }
