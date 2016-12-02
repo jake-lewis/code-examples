@@ -29,13 +29,13 @@ public class Main
 
 		System.out.println();
 
-		RedheadDuck redhead = new RedheadDuck();
+		AbstractDuck redhead = new RedheadDuck();
 		redhead.makeNoise();
 		redhead.fly();
 
 		System.out.println();
 
-		ModelDuck modelDuck = new ModelDuck();
+		AbstractDuck modelDuck = new ModelDuck();
 		modelDuck.makeNoise();
 		modelDuck.fly();
 		
